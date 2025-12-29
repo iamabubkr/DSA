@@ -7,15 +7,30 @@ int main()
     int n;
     cout << "Please enter your number:";
     cin >> n;
-
-    int ans = 0;
-    while (n > 0)
+    if (n >= 10)
     {
-        int r = n % 10;
-        n = n / 10;
-        ans = ans + r;
+        while (n > 9)
+        {
+            int ans = 0;
+
+            while (n > 0)
+            {
+                int r = n % 10;
+                n = n / 10;
+                ans = ans + r;
+            }
+            if (ans < 10)
+            {
+                cout << ans;
+            }
+
+            n = ans;
+        }
     }
-    cout << ans;
+    else
+    {
+        cout << n;
+    }
 
     return 0;
 }
